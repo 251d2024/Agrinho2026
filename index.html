@@ -1,129 +1,382 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte - Futuro Sustentável</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Agro Forte | Futuro Sustentável
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css"
+    >
+
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <h1>🌱 Agro Forte</h1>
+    <!-- LOADING -->
 
-            <ul>
+    <div id="loading">
+
+        <div class="loader"></div>
+
+        <h2>Carregando natureza...</h2>
+
+    </div>
+
+    <!-- BOTÃO TOPO -->
+
+    <button id="topoBtn">
+        ⬆
+    </button>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <h1 class="logo">
+                🌱 Agro Forte
+            </h1>
+
+            <div class="hamburguer">
+
+                ☰
+
+            </div>
+
+            <ul class="menu">
+
                 <li><a href="#inicio">Início</a></li>
+
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#impactos">Impactos</a></li>
-                <li><a href="#solucoes">Soluções</a></li>
+
+                <li><a href="#simulador">Simulador</a></li>
+
+                <li><a href="#mapa">Mapa</a></li>
+
+                <li><a href="#quiz">Quiz</a></li>
+
+                <li><a href="#ranking">Ranking</a></li>
+
             </ul>
 
-            <button id="modoBtn">🌙</button>
-        </nav>
-    </header>
-
-    <section id="inicio" class="hero">
-        <div class="hero-text">
-            <h2>Agro forte, futuro sustentável</h2>
-
-            <p>
-                O equilíbrio entre produção agrícola e preservação ambiental
-                é essencial para garantir alimento, qualidade de vida
-                e um planeta saudável para as próximas gerações.
-            </p>
-
-            <button id="mensagemBtn">
-                Clique para apoiar o meio ambiente
+            <button id="darkBtn">
+                🌙
             </button>
 
-            <p id="mensagem"></p>
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section id="inicio" class="hero">
+
+        <video autoplay muted loop class="video-bg">
+
+            <source
+                src="assets/videos/campo.mp4"
+                type="video/mp4"
+            >
+
+        </video>
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+
+            <h2>
+                Agro forte, futuro sustentável
+            </h2>
+
+            <p>
+                Produzir alimentos e preservar a natureza
+                precisam caminhar juntos.
+            </p>
+
+            <button id="fraseBtn">
+                Gerar mensagem 🌱
+            </button>
+
+            <p id="frase"></p>
+
         </div>
+
     </section>
 
-    <section id="sobre" class="conteudo">
-        <h2>🌿 Sobre o tema</h2>
+    <!-- SOBRE -->
 
-        <p>
-            O agronegócio possui grande importância para a economia e para
-            a alimentação da população. Porém, é necessário utilizar
-            práticas sustentáveis para proteger a natureza e evitar danos ambientais.
-        </p>
+    <section id="sobre" class="section reveal">
+
+        <h2>
+            🌿 Sustentabilidade
+        </h2>
 
         <div class="cards">
+
             <div class="card">
+
                 <h3>🌾 Produção</h3>
+
                 <p>
-                    A produção agrícola fornece alimentos e matérias-primas
-                    para o mundo inteiro.
+                    Agricultura moderna e eficiente.
                 </p>
+
             </div>
 
             <div class="card">
+
                 <h3>💧 Água</h3>
+
                 <p>
-                    O uso consciente da água ajuda a preservar rios,
-                    lagos e reservas naturais.
+                    Uso consciente dos recursos hídricos.
                 </p>
+
             </div>
 
             <div class="card">
+
                 <h3>🌳 Natureza</h3>
+
                 <p>
-                    Preservar florestas e biodiversidade garante
-                    equilíbrio ambiental.
+                    Preservação ambiental para o futuro.
                 </p>
+
             </div>
+
         </div>
+
     </section>
 
-    <section id="impactos" class="conteudo verde">
-        <h2>⚠️ Impactos ambientais</h2>
+    <!-- CONTADORES -->
 
-        <ul>
-            <li>Desmatamento</li>
-            <li>Poluição dos rios</li>
-            <li>Uso excessivo de agrotóxicos</li>
-            <li>Queimadas</li>
-            <li>Desperdício de água</li>
-        </ul>
-    </section>
+    <section class="section verde reveal">
 
-    <section id="solucoes" class="conteudo">
-        <h2>✅ Soluções sustentáveis</h2>
+        <h2>
+            📊 Impacto Sustentável
+        </h2>
 
-        <div class="cards">
-            <div class="card">
-                <h3>♻️ Reciclagem</h3>
+        <div class="contador-area">
+
+            <div class="contador-box">
+
+                <h3 id="contador1">
+                    0
+                </h3>
+
                 <p>
-                    Reutilizar materiais reduz impactos ambientais.
+                    Árvores preservadas
                 </p>
+
             </div>
 
-            <div class="card">
-                <h3>🚜 Tecnologia</h3>
+            <div class="contador-box">
+
+                <h3 id="contador2">
+                    0
+                </h3>
+
                 <p>
-                    Máquinas modernas ajudam a produzir mais
-                    utilizando menos recursos naturais.
+                    Litros economizados
                 </p>
+
             </div>
 
-            <div class="card">
-                <h3>🌱 Reflorestamento</h3>
+            <div class="contador-box">
+
+                <h3 id="contador3">
+                    0
+                </h3>
+
                 <p>
-                    O plantio de árvores ajuda a recuperar áreas degradadas.
+                    Energia sustentável
                 </p>
+
             </div>
+
         </div>
+
     </section>
+
+    <!-- SIMULADOR -->
+
+    <section
+        id="simulador"
+        class="section reveal"
+    >
+
+        <h2>
+            🚿 Simulador de Água
+        </h2>
+
+        <div class="simulador">
+
+            <input
+                type="number"
+                id="banho"
+                placeholder="Minutos no banho"
+            >
+
+            <button id="calcularBtn">
+                Calcular
+            </button>
+
+            <p id="resultadoAgua"></p>
+
+        </div>
+
+    </section>
+
+    <!-- MAPA -->
+
+    <section
+        id="mapa"
+        class="section verde reveal"
+    >
+
+        <h2>
+            🗺️ Mapa Agrícola
+        </h2>
+
+        <div id="map"></div>
+
+    </section>
+
+    <!-- QUIZ -->
+
+    <section
+        id="quiz"
+        class="section reveal"
+    >
+
+        <h2>
+            🧠 Quiz Sustentável
+        </h2>
+
+        <div class="quiz-box">
+
+            <h3>
+                Qual atitude ajuda o planeta?
+            </h3>
+
+            <button
+                class="quizBtn"
+                data-correct="true"
+            >
+                Reflorestamento
+            </button>
+
+            <button class="quizBtn">
+                Queimadas
+            </button>
+
+            <button class="quizBtn">
+                Poluição
+            </button>
+
+            <p id="quizResultado"></p>
+
+        </div>
+
+    </section>
+
+    <!-- RANKING -->
+
+    <section
+        id="ranking"
+        class="section verde reveal"
+    >
+
+        <h2>
+            🏆 Ranking Sustentável
+        </h2>
+
+        <div class="ranking">
+
+            <div class="rank">
+                🥇 Paraná
+            </div>
+
+            <div class="rank">
+                🥈 Goiás
+            </div>
+
+            <div class="rank">
+                🥉 São Paulo
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CHATBOT -->
+
+    <div class="chatbot">
+
+        <button id="chatBtn">
+            💬
+        </button>
+
+        <div id="chatBox">
+
+            <h3>
+                AgroBot 🌱
+            </h3>
+
+            <p>
+                Olá! Preserve a natureza 💚
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
 
     <footer>
+
         <p>
-            Projeto desenvolvido para o Concurso Agrinho 2026
+            Concurso Agrinho 2026 🌱
         </p>
+
     </footer>
 
+    <!-- AUDIO -->
+
+    <audio
+        autoplay
+        loop
+        controls
+    >
+
+        <source
+            src="assets/audio/natureza.mp3"
+            type="audio/mp3"
+        >
+
+    </audio>
+
+    <!-- SCRIPTS -->
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
     <script src="js/script.js"></script>
+
 </body>
 </html>
