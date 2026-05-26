@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4fff4;
+    color: #222;
+    transition: 0.4s;
+}
+
+header{
+    background-color: #1d5e20;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1{
+    color: white;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: #a8ff9f;
+}
+
+#modoBtn{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hero{
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop");
+    
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-text{
+    max-width: 700px;
+}
+
+.hero h2{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero button{
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2e8b57;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.hero button:hover{
+    background-color: #3cb371;
+}
+
+.conteudo{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.conteudo h2{
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.cards{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card{
+    background-color: white;
+    width: 300px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.verde{
+    background-color: #dfffe0;
+}
+
+.verde ul{
+    list-style: none;
+}
+
+.verde li{
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+footer{
+    background-color: #1d5e20;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* MODO ESCURO */
+
+.dark{
+    background-color: #121212;
+    color: white;
+}
+
+.dark .card{
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark .verde{
+    background-color: #1a2d1a;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 768px){
+
+    nav{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h2{
+        font-size: 2rem;
+    }
+
+    .hero p{
+        font-size: 1rem;
+    }
+}
