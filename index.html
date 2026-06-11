@@ -1,382 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Agro Forte | Futuro Sustentável
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet/dist/leaflet.css"
-    >
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro Forte, Futuro Sustentável</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- LOADING -->
+<header>
+    <nav>
+        <h1>🌱 Agro Forte</h1>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#dados">Dados</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div id="loading">
-
-        <div class="loader"></div>
-
-        <h2>Carregando natureza...</h2>
-
+<section class="hero">
+    <div class="hero-content">
+        <h2>Agro Forte, Futuro Sustentável</h2>
+        <p>Produzir alimentos de qualidade respeitando o meio ambiente é o caminho para um futuro melhor.</p>
+        <button onclick="mostrarMensagem()">Saiba Mais</button>
     </div>
+</section>
 
-    <!-- BOTÃO TOPO -->
+<section id="sobre" class="sobre">
+    <h2>O Equilíbrio Entre Produção e Natureza</h2>
+    <p>
+        O agronegócio sustentável busca aumentar a produção agrícola utilizando tecnologias e práticas
+        que preservam os recursos naturais, reduzindo impactos ambientais e garantindo qualidade de vida
+        para as futuras gerações.
+    </p>
+</section>
 
-    <button id="topoBtn">
-        ⬆
-    </button>
+<section id="beneficios" class="beneficios">
+    <h2>Benefícios da Agricultura Sustentável</h2>
 
-    <!-- HEADER -->
-
-    <header>
-
-        <nav class="navbar">
-
-            <h1 class="logo">
-                🌱 Agro Forte
-            </h1>
-
-            <div class="hamburguer">
-
-                ☰
-
-            </div>
-
-            <ul class="menu">
-
-                <li><a href="#inicio">Início</a></li>
-
-                <li><a href="#sobre">Sobre</a></li>
-
-                <li><a href="#simulador">Simulador</a></li>
-
-                <li><a href="#mapa">Mapa</a></li>
-
-                <li><a href="#quiz">Quiz</a></li>
-
-                <li><a href="#ranking">Ranking</a></li>
-
-            </ul>
-
-            <button id="darkBtn">
-                🌙
-            </button>
-
-        </nav>
-
-    </header>
-
-    <!-- HERO -->
-
-    <section id="inicio" class="hero">
-
-        <video autoplay muted loop class="video-bg">
-
-            <source
-                src="assets/videos/campo.mp4"
-                type="video/mp4"
-            >
-
-        </video>
-
-        <div class="overlay"></div>
-
-        <div class="hero-content">
-
-            <h2>
-                Agro forte, futuro sustentável
-            </h2>
-
-            <p>
-                Produzir alimentos e preservar a natureza
-                precisam caminhar juntos.
-            </p>
-
-            <button id="fraseBtn">
-                Gerar mensagem 🌱
-            </button>
-
-            <p id="frase"></p>
-
+    <div class="cards">
+        <div class="card">
+            <h3>🌳 Preservação Ambiental</h3>
+            <p>Proteção dos recursos naturais e da biodiversidade.</p>
         </div>
 
-    </section>
-
-    <!-- SOBRE -->
-
-    <section id="sobre" class="section reveal">
-
-        <h2>
-            🌿 Sustentabilidade
-        </h2>
-
-        <div class="cards">
-
-            <div class="card">
-
-                <h3>🌾 Produção</h3>
-
-                <p>
-                    Agricultura moderna e eficiente.
-                </p>
-
-            </div>
-
-            <div class="card">
-
-                <h3>💧 Água</h3>
-
-                <p>
-                    Uso consciente dos recursos hídricos.
-                </p>
-
-            </div>
-
-            <div class="card">
-
-                <h3>🌳 Natureza</h3>
-
-                <p>
-                    Preservação ambiental para o futuro.
-                </p>
-
-            </div>
-
+        <div class="card">
+            <h3>🚜 Produção Eficiente</h3>
+            <p>Maior produtividade com menor desperdício.</p>
         </div>
 
-    </section>
-
-    <!-- CONTADORES -->
-
-    <section class="section verde reveal">
-
-        <h2>
-            📊 Impacto Sustentável
-        </h2>
-
-        <div class="contador-area">
-
-            <div class="contador-box">
-
-                <h3 id="contador1">
-                    0
-                </h3>
-
-                <p>
-                    Árvores preservadas
-                </p>
-
-            </div>
-
-            <div class="contador-box">
-
-                <h3 id="contador2">
-                    0
-                </h3>
-
-                <p>
-                    Litros economizados
-                </p>
-
-            </div>
-
-            <div class="contador-box">
-
-                <h3 id="contador3">
-                    0
-                </h3>
-
-                <p>
-                    Energia sustentável
-                </p>
-
-            </div>
-
+        <div class="card">
+            <h3>💧 Uso Consciente da Água</h3>
+            <p>Sistemas inteligentes de irrigação e reaproveitamento.</p>
         </div>
 
-    </section>
-
-    <!-- SIMULADOR -->
-
-    <section
-        id="simulador"
-        class="section reveal"
-    >
-
-        <h2>
-            🚿 Simulador de Água
-        </h2>
-
-        <div class="simulador">
-
-            <input
-                type="number"
-                id="banho"
-                placeholder="Minutos no banho"
-            >
-
-            <button id="calcularBtn">
-                Calcular
-            </button>
-
-            <p id="resultadoAgua"></p>
-
+        <div class="card">
+            <h3>🌎 Futuro Sustentável</h3>
+            <p>Garantia de recursos para as próximas gerações.</p>
         </div>
-
-    </section>
-
-    <!-- MAPA -->
-
-    <section
-        id="mapa"
-        class="section verde reveal"
-    >
-
-        <h2>
-            🗺️ Mapa Agrícola
-        </h2>
-
-        <div id="map"></div>
-
-    </section>
-
-    <!-- QUIZ -->
-
-    <section
-        id="quiz"
-        class="section reveal"
-    >
-
-        <h2>
-            🧠 Quiz Sustentável
-        </h2>
-
-        <div class="quiz-box">
-
-            <h3>
-                Qual atitude ajuda o planeta?
-            </h3>
-
-            <button
-                class="quizBtn"
-                data-correct="true"
-            >
-                Reflorestamento
-            </button>
-
-            <button class="quizBtn">
-                Queimadas
-            </button>
-
-            <button class="quizBtn">
-                Poluição
-            </button>
-
-            <p id="quizResultado"></p>
-
-        </div>
-
-    </section>
-
-    <!-- RANKING -->
-
-    <section
-        id="ranking"
-        class="section verde reveal"
-    >
-
-        <h2>
-            🏆 Ranking Sustentável
-        </h2>
-
-        <div class="ranking">
-
-            <div class="rank">
-                🥇 Paraná
-            </div>
-
-            <div class="rank">
-                🥈 Goiás
-            </div>
-
-            <div class="rank">
-                🥉 São Paulo
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CHATBOT -->
-
-    <div class="chatbot">
-
-        <button id="chatBtn">
-            💬
-        </button>
-
-        <div id="chatBox">
-
-            <h3>
-                AgroBot 🌱
-            </h3>
-
-            <p>
-                Olá! Preserve a natureza 💚
-            </p>
-
-        </div>
-
     </div>
+</section>
 
-    <!-- FOOTER -->
+<section id="dados" class="dados">
+    <h2>Números do Agro Sustentável</h2>
 
-    <footer>
+    <div class="contador-container">
+        <div class="contador-box">
+            <span class="contador" data-target="85">0</span>
+            <p>% de redução de desperdício</p>
+        </div>
 
-        <p>
-            Concurso Agrinho 2026 🌱
-        </p>
+        <div class="contador-box">
+            <span class="contador" data-target="70">0</span>
+            <p>% de economia de água</p>
+        </div>
 
-    </footer>
+        <div class="contador-box">
+            <span class="contador" data-target="100">0</span>
+            <p>Projetos sustentáveis</p>
+        </div>
+    </div>
+</section>
 
-    <!-- AUDIO -->
+<section class="cta">
+    <h2>Construindo um Futuro Melhor</h2>
+    <p>Pequenas ações no presente geram grandes resultados para o amanhã.</p>
+</section>
 
-    <audio
-        autoplay
-        loop
-        controls
-    >
+<footer id="contato">
+    <p>© 2026 Agro Forte - Futuro Sustentável</p>
+</footer>
 
-        <source
-            src="assets/audio/natureza.mp3"
-            type="audio/mp3"
-        >
-
-    </audio>
-
-    <!-- SCRIPTS -->
-
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    <script src="js/script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
